@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora de Bebidas</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Calculadora de Bebidas</h1>
+      <div class="sub">Datos editables • Guardado local en este navegador</div>
+    </header>
+
+    <section class="controls">
+      <div class="row">
+        <label for="inp-personas" class="label">Número de Personas:</label>
+        <input id="inp-personas" type="number" min="0" step="1" value="80" class="input" />
+        <button id="btn-calcular" class="btn primary">Calcular</button>
+      </div>
+
+      <div class="row">
+        <button id="btn-guardar" class="btn">Guardar cambios</button>
+        <button id="btn-recargar" class="btn ghost" title="Recargar desde localStorage">Recargar</button>
+        <button id="btn-reset" class="btn danger" title="Volver a valores iniciales">Reset</button>
+
+        <div class="spacer"></div>
+
+        <button id="btn-descargar" class="btn primary">Descargar (PDF)</button>
+      </div>
+    </section>
+
+    <section class="status" id="status">Listo.</section>
+
+    <!-- ========== BEBIDAS ========== -->
+    <section class="listado">
+      <div class="listadoHead">
+        <h2>Cantidades estimadas (Bebidas)</h2>
+        <button class="btn ghost small" id="add-bebida">+ Agregar bebida</button>
+      </div>
+      <div id="tabla-bebidas" class="table-wrap"></div>
+    </section>
+
+    <!-- ========== MEZCLADORES ========== -->
+    <section class="listado">
+      <div class="listadoHead">
+        <h2>Cantidad de Mezcladores</h2>
+        <button class="btn ghost small" id="add-mezclador">+ Agregar mezclador</button>
+      </div>
+      <div id="tabla-mezcladores" class="table-wrap"></div>
+    </section>
+
+    <!-- ========== HIELO ========== -->
+    <section class="listado">
+      <div class="listadoHead">
+        <h2>Cantidad de Hielo</h2>
+        <button class="btn ghost small" id="add-hielo">+ Agregar hielo</button>
+      </div>
+      <div id="tabla-hielo" class="table-wrap"></div>
+    </section>
+  </main>
+
+  <!-- jsPDF + AutoTable -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
