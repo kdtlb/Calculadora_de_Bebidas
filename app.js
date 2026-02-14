@@ -484,7 +484,7 @@
       doc.setFontSize(9);
       doc.setTextColor(...MUT);
       doc.text(`Página ${i} / ${pageCount}`, w - margin, h - 28, { align: "right" });
-      doc.text("Reporte generado por la Calculadora", margin, h - 28);
+      doc.text("Programa echo por Matías López Bertram", margin, h - 28);
 
       doc.setTextColor(...TXT);
     }
@@ -511,3 +511,4 @@
     refresh();
   });
 })();
+
